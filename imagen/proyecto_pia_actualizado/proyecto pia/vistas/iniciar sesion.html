@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ingresar</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fffdfb; /* color de fondo */
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+      margin: 56px auto;
+      background: #ffe4c4;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: .5rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: .75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: .75rem;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .extra-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+  <div class="login-box">
+    <h2>Iniciar Sesión</h2>
+    <form class="oe_login_form" method="post" action="/web/login">
+      <input type="hidden" name="csrf_token" value="8c4e2699fdba61ade91980dd674cc9168e2355e8o1790436590">
+
+      <div class="form-group field-login">
+        <label for="login">Correo</label>
+        <input type="text" placeholder="Correo" name="login" id="login" required autocomplete="username">
+      </div>
+
+      <div class="form-group field-password">
+        <label for="password">Contraseña</label>
+        <input type="password" placeholder="Contraseña" name="password" id="password" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="btn">Iniciar Sesión</button>
+
+      <div class="extra-links">
+        <a href="/web/signup">¿No tienes una cuenta?</a>
+        <a href="/web/reset_password">Restablecer contraseña</a>
+      </div>
+    </form>
+  </div>
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>
+ 

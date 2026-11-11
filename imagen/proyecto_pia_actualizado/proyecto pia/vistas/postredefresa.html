@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postre de Fresa</title>
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      background: #fff8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .producto-img img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid #fbc6d0;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .producto-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    .producto-info {
+      max-width: 400px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .producto-info h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #220404;
+    }
+
+    .precio {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #e91e63;
+    }
+
+    .descripcion {
+      font-size: 16px;
+      color: #3c0202;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .selector label {
+      font-weight: bold;
+      color: #220404;
+    }
+
+    select, input[type="number"] {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .boton {
+      display: inline-block;
+      background: linear-gradient(90deg, #f52350, #ff6b81);
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100%;
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+
+    .boton:hover {
+      background: linear-gradient(90deg, #c40039, #ff3b5c);
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .producto-img img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <!-- Imagen -->
+    <div class="producto-img">
+      <img src="../imagen/postre de fresa.jpg" alt="Postre de Fresa">
+    </div>
+
+    <!-- Info del producto -->
+    <div class="producto-info">
+      <h1>Postre de Fresa</h1>
+      <p class="descripcion">
+        Un postre fresco y suave con el toque natural de las fresas. Su textura cremosa y su sabor dulce 
+        te harán disfrutar cada cucharada. Perfecto para los amantes del sabor frutal.
+      </p>
+      <p class="precio" id="precio">$7.000</p>
+
+      <!-- Tamaño -->
+      <div class="selector">
+        <label for="tamano">Tamaño:</label>
+        <select id="tamano" onchange="actualizarPrecio()">
+          <option value="junior">Junior</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <!-- Cantidad -->
+      <div class="selector">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+      </div>
+
+      <!-- Botón -->
+      <button class="boton" onclick="agregarCarrito()">🛒 Añadir al carrito</button>
+    </div>
+  </div>
+
+  <script>
+    const precios = {
+      junior: 7000,
+      mediano: 10000,
+      grande: 13000
+    };
+
+    function actualizarPrecio() {
+      const tamano = document.getElementById("tamano").value;
+      const precioElement = document.getElementById("precio");
+      precioElement.textContent = "$" + precios[tamano].toLocaleString("es-CO");
+    }
+
+    function agregarCarrito() {
+      const cantidad = document.getElementById("cantidad").value;
+      const tamano = document.getElementById("tamano").value;
+      const precio = precios[tamano];
+      alert("Agregaste " + cantidad + " postre(s) de fresa tamaño " + tamano + 
+            " al carrito 🛒 (Precio unitario: $" + precio.toLocaleString("es-CO") + ")");
+    }
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

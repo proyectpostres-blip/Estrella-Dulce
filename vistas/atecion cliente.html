@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención al Cliente | Estrella Dulce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/style.css">
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffdee9, #b5fffc);
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* ENCABEZADO */
+        .ed-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 12px 5%;
+        }
+
+        .ed-header__brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .ed-header__logo {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .ed-header__title {
+            font-family: 'Kavoon', cursive;
+            font-size: 25px;
+            margin: 0;
+        }
+
+        .ed-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .ed-nav a {
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .ed-nav a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .contenedor {
+            margin: 55px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            max-width: 700px;
+            width: calc(100% - 40px);
+            padding: 40px;
+            text-align: center;
+            animation: aparecer 1s ease-in-out;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TÍTULOS Y TEXTOS */
+        .contenedor h1 {
+            font-family: 'Kavoon', cursive;
+            color: #f04a8a;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .contenedor p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* ILUSTRACIÓN */
+        .ilustracion {
+            width: 180px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* FORMULARIO */
+        .contenedor form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .contenedor label {
+            font-weight: bold;
+            color: #f04a8a;
+        }
+
+        .contenedor input,
+        .contenedor textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 12px;
+            border: 2px solid #f9a1d1;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: .3s;
+        }
+
+        .contenedor textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contenedor input:focus,
+        .contenedor textarea:focus {
+            border-color: #f04a8a;
+            box-shadow: 0 0 8px #ffc0d9;
+        }
+
+        /* BOTÓN */
+        .contenedor button {
+            background-color: #f04a8a;
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+            width: 100%;
+        }
+
+        .contenedor button:hover {
+            background-color: #d8367b;
+            transform: scale(1.02);
+        }
+
+        /* FOOTER */
+        .ed-footer {
+            width: 100%;
+            margin-top: auto;
+            padding: 25px 5%;
+        }
+
+        .ed-footer .page-wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            width: 85px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .ed-footer-info {
+            text-align: center;
+        }
+
+        .ed-footer p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        .footer-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* TABLETS */
+        @media screen and (max-width: 992px) {
+            .ed-header {
+                justify-content: center;
+                flex-direction: column;
+                padding: 15px 3%;
+            }
+
+            .ed-nav {
+                gap: 15px;
+            }
+
+            .contenedor {
+                max-width: 650px;
+                margin: 40px auto;
+            }
+
+            .ed-footer .page-wrap {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* CELULARES */
+        @media screen and (max-width: 600px) {
+            .ed-header {
+                padding: 12px 10px;
+                gap: 12px;
+            }
+
+            .ed-header__logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            .ed-header__title {
+                font-size: 21px;
+            }
+
+            .ed-nav {
+                width: 100%;
+                gap: 12px;
+                justify-content: center;
+            }
+
+            .ed-nav a {
+                font-size: 13px;
+            }
+
+            .contenedor {
+                width: calc(100% - 28px);
+                margin: 25px auto;
+                padding: 25px 18px;
+                border-radius: 16px;
+            }
+
+            .contenedor h1 {
+                font-size: 1.9rem;
+            }
+
+            .contenedor p {
+                font-size: 0.95rem;
+                margin-bottom: 22px;
+            }
+
+            .ilustracion {
+                width: 140px;
+            }
+
+            .contenedor form {
+                gap: 12px;
+            }
+
+            .contenedor input,
+            .contenedor textarea {
+                font-size: 16px;
+                padding: 11px;
+            }
+
+            .contenedor button {
+                padding: 13px;
+                font-size: 0.95rem;
+            }
+
+            .ed-footer {
+                padding: 20px 15px;
+            }
+
+            .ed-footer .page-wrap {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-logo {
+                width: 65px;
+            }
+
+            .ed-footer p {
+                font-size: 12px;
+            }
+        }
+
+        /* CELULARES MUY PEQUEÑOS */
+        @media screen and (max-width: 360px) {
+            .ed-header__title {
+                font-size: 18px;
+            }
+
+            .ed-nav {
+                gap: 9px;
+            }
+
+            .ed-nav a {
+                font-size: 12px;
+            }
+
+            .contenedor {
+                padding: 20px 14px;
+            }
+
+            .contenedor h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ACCESIBILIDAD */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        
+/* =====================================
+   CORRECCIÓN RESPONSIVE PARA MÓVILES
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+html, body {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* Encabezado */
+.ed-header {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 12px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.ed-header__brand {
+    width: 100%;
+    justify-content: center;
+}
+
+.ed-nav {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+}
+
+/* Formulario */
+.contenedor {
+    width: calc(100% - 28px) !important;
+    max-width: 700px !important;
+    margin: 25px auto !important;
+    padding: 22px 16px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+}
+
+.contenedor form {
+    width: 100% !important;
+}
+
+.contenedor input,
+.contenedor textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.contenedor h1 {
+    font-size: 1.8rem !important;
+}
+
+.contenedor p {
+    font-size: 0.95rem !important;
+}
+
+.ilustracion {
+    width: 130px !important;
+    max-width: 100% !important;
+}
+
+/* Pie de página */
+.ed-footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 25px 15px !important;
+    box-sizing: border-box !important;
+}
+
+.ed-footer .page-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+}
+
+.ed-footer-info {
+    width: 100%;
+    text-align: center !important;
+}
+
+.ed-footer p {
+    overflow-wrap: anywhere;
+}
+
+.footer-logo {
+    width: 65px !important;
+    height: auto !important;
+    max-width: 100% !important;
+}
+}
+
+/* TABLETS */
+@media screen and (min-width: 601px) and (max-width: 992px) {
+
+.ed-header,
+.ed-footer {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.contenedor {
+    width: 90% !important;
+    max-width: 700px !important;
+}
+
+.ed-footer .page-wrap {
+    justify-content: center !important;
+    gap: 25px !important;
+}
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="ed-header">
+
+        <a href="../index.html" class="ed-header__brand">
+            <img
+                src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png"
+                alt="Logo Estrella Dulce"
+                class="ed-header__logo"
+            >
+
+            <h1 class="ed-header__title">Estrella Dulce</h1>
+        </a>
+
+        <nav class="ed-nav">
+            <a href="postres.html">Postres</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html" class="ed-cart" aria-label="Carrito de compras">🛒</a>
+            <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor">
+
+        <img
+            src="auto-postre.png"
+            alt="Auto con postre de fresa"
+            class="ilustracion"
+        >
+
+        <h1>¡Hola! 💬</h1>
+
+        <p>
+            ¿Tienes alguna pregunta, sugerencia o problema con tu pedido?
+            Estamos felices de ayudarte 🍰✨
+        </p>
+
+        <form onsubmit="enviarMensaje(event)">
+
+            <label for="nombre">Tu nombre:</label>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Ej. María López"
+                required
+            >
+
+            <label for="correo">Tu correo:</label>
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="Ej. maria@gmail.com"
+                required
+            >
+
+            <label for="mensaje">Mensaje:</label>
+
+            <textarea
+                id="mensaje"
+                rows="5"
+                placeholder="Cuéntanos cómo podemos ayudarte..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Enviar mensaje
+            </button>
+
+        </form>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="ed-footer">
+
+        <div class="page-wrap">
+
+            <img
+                src="../imagen/I.U Pascual Bravo Escudo.png"
+                alt="Logo Pascual Bravo"
+                class="footer-logo"
+            >
+
+            <div class="ed-footer-info">
+
+                <p><strong>Estrella Dulce S.A.</strong></p>
+
+                <p>Medellín, Antioquia</p>
+
+                <p>
+                    <a href="#" class="footer-link">Términos y condiciones</a>
+                    |
+                    <a href="#" class="footer-link">Política de privacidad</a>
+                </p>
+
+                <p>
+                    &copy; 2025 Estrella Dulce. Todos los derechos reservados.
+                </p>
+
+            </div>
+
+            <div class="text-center">
+                <p>Tel: +3146199121</p>
+                <p>proyectpostres@gmail.com</p>
+            </div>
+
+            <img
+                src="../imagen/I.E Félix De Bedout Moreno Escudo.png"
+                alt="Logo Félix de Bedout Moreno"
+                class="footer-logo"
+            >
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function enviarMensaje(event) {
+            event.preventDefault();
+
+            alert("💌 ¡Gracias por escribirnos! Te responderemos lo antes posible.");
+
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
+</html>

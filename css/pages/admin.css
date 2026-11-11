@@ -1,0 +1,592 @@
+/* CSS exclusivo del panel de administración */
+
+
+/* =========================================================
+   ESTRELLA DULCE
+   style.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffaf5;
+    color: #DB1A35;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   2. CONTENEDOR GENERAL
+   ========================================================= */
+
+.page-wrap {
+    width: 90%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+.ed-header {
+    width: 100%;
+    min-height: 85px;
+    padding: 12px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #f3dfc1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* Logo + nombre */
+
+.ed-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #DB1A35;
+}
+
+.ed-header__brand:hover {
+    color: #DB1A35;
+}
+
+.ed-header__logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.ed-header__title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   4. MENÚ DE NAVEGACIÓN
+   ========================================================= */
+
+.ed-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.ed-nav > a {
+    color: #DB1A35;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.ed-nav > a:hover {
+    color: #DB1A35;
+}
+
+
+/* =========================================================
+   5. CARRITO
+   ========================================================= */
+
+.ed-cart {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.ed-cart-count {
+    position: absolute;
+
+    top: -12px;
+    right: -15px;
+
+    min-width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 5px;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    background-color: #b27642;
+    color: white;
+}
+
+.bg-beige {
+    background-color: #b27642 !important;
+}
+
+
+/* =========================================================
+   6. CARRUSEL
+   ========================================================= */
+
+.carousel-container {
+    margin-top: 32px;
+}
+
+#postresCarousel {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+#postresCarousel .carousel-item img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   7. TÍTULOS
+   ========================================================= */
+
+h2 {
+    color: #6b432c;
+    font-weight: 700;
+}
+
+.card-title {
+    color: #6b432c;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   8. TARJETAS DE POSTRES
+   ========================================================= */
+
+.card-postre {
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border-radius: 15px !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card-postre:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Imagen */
+
+.card-postre .card-img-top {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.card-postre:hover .card-img-top {
+    transform: scale(1.04);
+}
+
+
+/* Contenido */
+
+.card-postre .card-body {
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+}
+
+.card-postre .card-text {
+    flex-grow: 1;
+
+    color: #6b5a50;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   9. BOTONES ESTRELLA DULCE
+   ========================================================= */
+
+.btn-ed {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.btn-ed:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Botón outline */
+
+.btn-ed--outline {
+    border: 2px solid #b27642;
+
+    color: #8b5e3c;
+
+    background-color: transparent;
+}
+
+.btn-ed--outline:hover {
+    background-color: #b27642;
+    color: #ffffff;
+}
+
+
+/* Botón dorado */
+
+.btn-ed--gold {
+    background-color: #b27642;
+    color: #ffffff;
+
+    border: 2px solid #b27642;
+}
+
+.btn-ed--gold:hover {
+    background-color: #8b5e3c;
+    border-color: #8b5e3c;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   10. MODAL DE INICIO DE SESIÓN
+   ========================================================= */
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #f3dfc1;
+    color: #5a3825;
+}
+
+.modal-title {
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+
+/* Botones login */
+
+.login-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+    padding: 11px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #4a3428;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #f7eee5;
+    border-color: #c9a27e;
+}
+
+.login-btn img {
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
+}
+
+
+/* Botón continuar */
+
+.continue-btn {
+    background-color: #b27642;
+    border-color: #b27642;
+
+    color: #ffffff;
+}
+
+.continue-btn:hover {
+    background-color: #8b5e3c;
+    border-color: #8b5e3c;
+
+    color: #ffffff;
+}
+
+
+/* Campo teléfono */
+
+.modal-body input {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.modal-body input:focus {
+    border-color: #b27642;
+
+    box-shadow: 0 0 0 3px rgba(178, 118, 66, 0.15);
+}
+
+
+/* Texto pequeño */
+
+.small-text {
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #6b5a50;
+}
+
+.small-text a {
+    color: #b27642;
+}
+
+.small-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.ed-footer {
+    margin-top: 60px;
+
+    padding: 35px 0;
+
+    background-color: #4a3022;
+
+    color: #ffffff;
+}
+
+.ed-footer-info p {
+    margin-bottom: 8px;
+}
+
+.footer-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+.footer-link {
+    color: #f3dfc1;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.customer-service-title {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   12. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .ed-header {
+        padding: 12px 3%;
+    }
+
+    .ed-nav {
+        gap: 15px;
+    }
+
+    .ed-header__title {
+        font-size: 23px;
+    }
+
+    #postresCarousel .carousel-item img {
+        height: 380px;
+    }
+}
+
+
+/* =========================================================
+   13. RESPONSIVE - CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .ed-header {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+    .ed-header__brand {
+        justify-content: center;
+    }
+
+    .ed-header__title {
+        font-size: 24px;
+    }
+
+    .ed-nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .carousel-container {
+        margin-top: 20px;
+    }
+
+    #postresCarousel .carousel-item img {
+        height: 300px;
+    }
+
+    .card-postre .card-img-top {
+        height: 230px;
+    }
+
+    .ed-footer {
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+/* =========================================================
+   14. RESPONSIVE - CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .ed-header__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ed-header__title {
+        font-size: 20px;
+    }
+
+    .ed-nav {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    #postresCarousel .carousel-item img {
+        height: 220px;
+    }
+
+    .card-postre .card-body {
+        padding: 18px;
+    }
+
+    .btn-ed {
+        width: 100%;
+    }
+}

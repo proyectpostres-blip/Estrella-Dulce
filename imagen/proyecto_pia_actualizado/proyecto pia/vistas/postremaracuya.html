@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postre de Maracuyá</title>
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      background: linear-gradient(180deg, #ffffff, #fff9e6);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 60px;
+    }
+
+    /* 🌼 Imagen */
+    .producto-img img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 5px solid transparent;
+      background: linear-gradient(45deg, #f5c542, #ffb84d);
+      background-clip: padding-box;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .producto-img img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+    }
+
+    .producto-info {
+      max-width: 420px;
+      text-align: left;
+    }
+
+    .producto-info h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #261a00;
+    }
+
+    .precio {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #e32e4d;
+    }
+
+    .descripcion {
+      font-size: 16px;
+      color: #3a1a00;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .selector label {
+      font-weight: bold;
+    }
+
+    select, input[type="number"] {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 15px;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: #f52350;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .boton:hover {
+      background: #c40039;
+    }
+
+    /* 🛒 Botón flotante del carrito */
+    #btnCarrito {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #f5c542;
+      color: #3a1a00;
+      border: none;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    #btnCarrito:hover {
+      background-color: #e32e4d;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    #contadorCarrito {
+      position: absolute;
+      top: 5px;
+      right: 7px;
+      background-color: #ff3b3b;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 3px 8px;
+    }
+
+    /* 📱 Móvil */
+    @media (max-width: 768px) {
+      .producto-img img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <!-- Imagen -->
+    <div class="producto-img">
+      <img src="../imagen/postre maracuya.jpg" alt="Postre de maracuyá">
+    </div>
+
+    <!-- Info -->
+    <div class="producto-info">
+      <h1>Postre de Maracuyá</h1>
+      <p class="descripcion">
+        Cremoso, refrescante y lleno del sabor tropical del maracuyá 🍈.  
+        Hecho con amor y el equilibrio perfecto entre dulzura y acidez, este postre conquista con su textura suave y su toque frutal irresistible.
+      </p>
+
+      <p class="precio" id="precioTexto">$7.000</p>
+
+      <!-- Tamaño -->
+      <div class="selector">
+        <label for="tamano">Tamaño:</label>
+        <select id="tamano" onchange="actualizarPrecio()">
+          <option value="junior">Junior</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <!-- Cantidad -->
+      <div class="selector">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+      </div>
+
+      <!-- Botón -->
+      <button class="boton" onclick="agregarCarrito()">🛒 Añadir al carrito</button>
+    </div>
+  </div>
+
+  <!-- 🛒 Botón flotante -->
+  <button id="btnCarrito" onclick="irAlCarrito()">
+    🛒
+    <span id="contadorCarrito">0</span>
+  </button>
+
+  <script>
+    // 💰 Precios por tamaño
+    const precios = {
+      junior: 7000,
+      mediano: 9000,
+      grande: 11000
+    };
+
+    // 🔹 Actualiza precio al cambiar tamaño
+    function actualizarPrecio() {
+      const tamano = document.getElementById("tamano").value;
+      const precio = precios[tamano];
+      document.getElementById("precioTexto").textContent = `$${precio.toLocaleString()}`;
+    }
+
+    // 🛒 Cargar carrito
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // 🧁 Agregar producto al carrito
+    function agregarCarrito() {
+      const tamano = document.getElementById("tamano").value;
+      const cantidad = parseInt(document.getElementById("cantidad").value);
+      const precio = precios[tamano];
+
+      const producto = {
+        nombre: "Postre de Maracuyá",
+        tamano: tamano,
+        precio: precio,
+        cantidad: cantidad,
+        imagen: "../imagen/1a579ed4-f7f2-48da-9bd6-570d388f5754.jpg"
+      };
+
+      carrito.push(producto);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      actualizarContadorCarrito();
+      alert(`Agregaste ${cantidad}x ${producto.nombre} (${tamano}) - $${precio.toLocaleString()} cada uno 🍈`);
+    }
+
+    // 🔹 Actualiza contador de carrito
+    function actualizarContadorCarrito() {
+      const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+      document.getElementById("contadorCarrito").textContent = total;
+    }
+
+    // 🔹 Ir al carrito
+    function irAlCarrito() {
+      window.location.href = "carrito.html";
+    }
+
+    // Inicializar contador
+    actualizarContadorCarrito();
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

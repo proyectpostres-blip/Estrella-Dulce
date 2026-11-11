@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atención al Cliente</title>
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      margin: 0;
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      }
+
+    .contenedor {
+      margin: 56px auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 700px;
+      width: 90%;
+      padding: 40px;
+      text-align: center;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  h1 {
+  color: #140209;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  animation: subirBajar 2.5s ease-in-out infinite;
+}
+
+@keyframes subirBajar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      color: #0e0206;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #b3ffca;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #aef186;
+      box-shadow: 0 0 8px #ffc0d9;
+    }
+
+    button {
+      background-color: #aee788;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d8367b;
+      transform: scale(1.05);
+    }
+
+    .ilustracion {
+      width: 180px;
+      margin-bottom: 20px;
+      animation: flotar 3s ease-in-out infinite;
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="contenedor">
+
+    <h1>¡Hola! 💬</h1>
+    <p>¿Tienes alguna pregunta, sugerencia o problema con tu pedido?  
+    Estamos felices de ayudarte 🍰✨</p>
+
+    <form onsubmit="enviarMensaje(event)">
+      <label for="nombre">Tu nombre:</label>
+      <input type="text" id="nombre" placeholder="Ej. María López" required>
+
+      <label for="correo">Tu correo:</label>
+      <input type="email" id="correo" placeholder="Ej. maria@gmail.com" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" rows="5" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+
+  <script>
+    function enviarMensaje(event) {
+      event.preventDefault();
+      alert("💌 ¡Gracias por escribirnos! Te responderemos lo antes posible.");
+      document.querySelector("form").reset();
+    }
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

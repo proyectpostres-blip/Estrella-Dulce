@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de Envío</title>
+  <style>
+    body {
+      background: #f7f8fa;
+      font-family: 'Kavoon', cursive;
+      }
+
+    .pago-container {
+      margin: 56px auto;
+      background: #ffe2e2;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 420px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #000000;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 500;
+      color: #130202;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #363333;
+      border-radius: 10px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #f1137b;
+      box-shadow: 0 0 5px rgba(247, 9, 187, 0.3);
+    }
+
+    button {
+      background: linear-gradient(90deg, #f32256, #ff194b);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #15f572, #1ae64d);
+      transform: scale(1.03);
+    }
+
+    #resumen {
+      text-align: left;
+      margin-bottom: 15px;
+      background: #f9fafc;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+  <div class="pago-container">
+    <h2>Detalles de Envío</h2>
+
+    <div id="resumen"></div>
+
+    <form onsubmit="procesarPedido(event)">
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" placeholder="Ej: Ana Gómez" required>
+
+      <label for="direccion">Dirección de Entrega:</label>
+      <textarea id="direccion" placeholder="Ej: Calle 10 #5-20, Bogotá" required></textarea>
+
+      <label for="telefono">Teléfono de Contacto:</label>
+      <input type="tel" id="telefono" placeholder="Ej: 312 456 7890" required>
+
+      <!-- 💳 Nuevo campo de método de pago -->
+      <label for="pago">Método de Pago:</label>
+      <select id="pago" required>
+        <option value="">Seleccione una opción</option>
+        <option value="efectivo">Efectivo contra entrega</option>
+        <option value="transferencia">Transferencia (Nequi, Daviplata, Bancolombia)</option>
+        <option value="tarjeta">Tarjeta de crédito o débito</option>
+      </select>
+
+      <button type="submit">Confirmar Pedido</button>
+    </form>
+  </div>
+
+  <script>
+    // Mostrar resumen del carrito
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const resumenDiv = document.getElementById("resumen");
+
+    if (carrito.length === 0) {
+      resumenDiv.innerHTML = "<p>No hay productos en el carrito.</p>";
+    } else {
+      let total = 0;
+      let html = "<strong>Resumen del pedido:</strong><ul>";
+      carrito.forEach(item => {
+        html += `<li>${item.nombre} - $${item.precio.toLocaleString('es-CO')}</li>`;
+        total += item.precio;
+      });
+      html += `</ul><p><strong>Total: $${total.toLocaleString('es-CO')}</strong></p>`;
+      resumenDiv.innerHTML = html;
+    }
+
+    // Procesar pedido y guardar datos
+    function procesarPedido(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const direccion = document.getElementById("direccion").value;
+      const telefono = document.getElementById("telefono").value;
+      const pago = document.getElementById("pago").value;
+
+      // Guardar en localStorage
+      localStorage.setItem("nombre", nombre);
+      localStorage.setItem("direccion", direccion);
+      localStorage.setItem("telefono", telefono);
+      localStorage.setItem("pago", pago);
+
+      // Redirigir a página de confirmación
+      window.location.href = "gracias.html";
+    }
+  </script>
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

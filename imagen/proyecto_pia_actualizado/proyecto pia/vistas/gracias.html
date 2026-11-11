@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Gracias por tu compra!</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fdfcfc, #ffffff);
+      color: rgb(236, 174, 174);
+      font-family: 'Kavoon', cursive;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 50px;
+      text-align: center;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .auto {
+      position: relative;
+      width: 250px;
+      height: 150px;
+      background-image: url('../imagen/ChatGPT Image 26 oct 2025, 07_37_58 p.m..png'); /* reemplaza con la tuya */
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: moverAuto 7s linear infinite;
+    }
+
+    @keyframes moverAuto {
+      0% { transform: translateX(120vw); }
+      50% { transform: translateX(0); }
+      100% { transform: translateX(-120vw); }
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 40px;
+      color: #f3a8a8;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: rgb(252, 177, 177);
+      color: #f04a8a;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #f04a8a;
+      color: white;
+      transform: scale(1.1);
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="text-center" style="padding: 60px 24px;">
+    <h1>🎉 ¡Gracias por tu compra! 🎉</h1>
+
+    <div class="auto" style="margin: 0 auto;"></div>
+
+    <p>Tu pedido va en camino 🚗🍓💨</p>
+
+    <button onclick="window.location.href='../index.html'">Volver a la tienda</button>
+  </div>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

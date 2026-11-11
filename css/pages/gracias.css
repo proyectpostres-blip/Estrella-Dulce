@@ -1,0 +1,64 @@
+/* CSS exclusivo de gracias.html */
+
+body {
+      margin: 0;
+      background: linear-gradient(135deg, #fdfcfc, #ffffff);
+      color: rgb(236, 174, 174);
+      font-family: 'Kavoon', cursive;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 50px;
+      text-align: center;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .auto {
+      position: relative;
+      width: 250px;
+      height: 150px;
+      background-image: url('../imagen/ChatGPT Image 26 oct 2025, 07_37_58 p.m..png'); /* reemplaza con la tuya */
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: moverAuto 7s linear infinite;
+    }
+
+    @keyframes moverAuto {
+      0% { transform: translateX(120vw); }
+      50% { transform: translateX(0); }
+      100% { transform: translateX(-120vw); }
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 40px;
+      color: #f3a8a8;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: rgb(252, 177, 177);
+      color: #f04a8a;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #f04a8a;
+      color: white;
+      transform: scale(1.1);
+    }

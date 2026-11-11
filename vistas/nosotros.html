@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros - Estrella Dulce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #DB1A35; --primary-dark: #b8152c; --white: #ffffff; --gray-100: #f8f9fa; --gray-200: #e9ecef; --gray-300: #dee2e6; --gray-600: #6c757d; --gray-900: #212529; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--gray-100); font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--gray-900); }
+
+        .ed-header { background: var(--primary); padding: 0.8rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(219, 26, 53, 0.3); }
+        .ed-header__brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+        .ed-header__logo { width: 50px; height: 50px; object-fit: contain; border-radius: 50%; background: var(--white); padding: 4px; border: 2px solid var(--white); }
+        .ed-header__title { font-family: 'Fredoka', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: -0.5px; margin: 0; }
+        .ed-nav { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .ed-nav a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.2s ease; padding: 0.3rem 0; border-bottom: 2px solid transparent; }
+        .ed-nav a:hover { border-bottom-color: var(--white); opacity: 0.85; }
+        .ed-cart { position: relative; display: flex; align-items: center; gap: 4px; font-size: 1.2rem; color: var(--white); }
+
+        .btn-ed { display: inline-block; padding: 0.55rem 1.8rem; font-weight: 500; border-radius: 8px; text-decoration: none; transition: all 0.2s ease; border: 1px solid transparent; cursor: pointer; text-align: center; font-size: 0.95rem; font-family: 'Work Sans', sans-serif; }
+        .btn-ed--primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-ed--primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: var(--white); }
+        .btn-ed--white { background: var(--white); color: var(--primary); border-color: var(--white); }
+        .btn-ed--white:hover { background: rgba(255, 255, 255, 0.85); color: var(--primary-dark); }
+
+        .ed-footer { background: var(--primary); color: var(--white); padding: 2.5rem 1.5rem; margin-top: 3rem; }
+        .ed-footer .page-wrap { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; }
+        .footer-logo { width: 60px; height: 60px; object-fit: contain; background: var(--white); border-radius: 8px; padding: 4px; border: 2px solid var(--white); }
+        .ed-footer-info p { margin: 0.2rem 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.85); font-family: 'Work Sans', sans-serif; }
+        .ed-footer-info a.footer-link { color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: color 0.2s; }
+        .ed-footer-info a.footer-link:hover { color: var(--white); text-decoration: underline; }
+        .customer-service-title { color: var(--white); font-size: 1rem; font-weight: 600; font-family: 'Fredoka', sans-serif; }
+
+        .nosotros-title { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--gray-900); }
+        .nosotros-intro { font-size: 1.1rem; color: var(--gray-600); line-height: 1.7; }
+        .nosotros-separador { border-color: var(--primary); opacity: 0.3; }
+        .nosotros-persona { background: var(--white); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .nosotros-persona h3 { font-family: 'Fredoka', sans-serif; color: var(--primary); font-weight: 600; margin-bottom: 0.5rem; }
+        .nosotros-persona p { color: var(--gray-600); line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .ed-header { flex-direction: column; align-items: center; padding: 0.8rem 1rem; gap: 0.6rem; }
+            .ed-nav { justify-content: center; gap: 1rem; }
+            .ed-header__title { font-size: 1.3rem; }
+            .ed-footer .page-wrap { flex-direction: column; text-align: center; }
+            .footer-logo { width: 50px; height: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="ed-header">
+        <a href="../index.php" class="ed-header__brand">
+            <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+            <h1 class="ed-header__title">Estrella Dulce</h1>
+        </a>
+        <nav class="ed-nav" aria-label="Navegación principal">
+            <a href="../index.php">🏠 Inicio</a>
+            <a href="postres.php">Postres</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.php">Contacto</a>
+            <a href="carrito.php" class="ed-cart" aria-label="Carrito de compras">🛒 Carrito</a>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1 class="nosotros-title text-center mb-4">Nuestra Historia</h1>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <p class="nosotros-intro text-center">
+                    En <strong>Estrella Dulce</strong>, creemos que la vida es más sabrosa con un poco de azúcar y mucha pasión.
+                    Nuestra repostería nació de un sueño simple: compartir los postres caseros más deliciosos con el mundo.
+                </p>
+                <hr class="nosotros-separador my-4">
+                <section class="nosotros-persona">
+                    <h3>Emanuel - El creativo del sabor</h3>
+                    <p>Con un paladar exigente y ojo para los detalles, Emanuel siempre busca el balance perfecto entre sabor, textura y presentación. Nada sale sin su aprobación final.</p>
+                </section>
+                <section class="nosotros-persona">
+                    <h3>Mariangel - La reina del toque casero</h3>
+                    <p>Cada receta que toca lleva un pedacito de amor. Mariangel pone ese sabor auténtico que hace que cada postre te haga sentir como en casa.</p>
+                </section>
+                <section class="nosotros-persona">
+                    <h3>Paula - La experta en frescura y presentación</h3>
+                    <p>Con un talento especial para crear postres que se ven tan bien como saben, Paula se encarga de que cada creación sea un deleite para los ojos y el paladar.</p>
+                </section>
+                <div class="text-center mt-5">
+                    <a href="../index.php" class="btn-ed btn-ed--primary">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="ed-footer">
+        <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+            <div class="text-center ed-footer-info my-3 my-md-0">
+                <p><strong style="color: var(--white); font-family: 'Fredoka', sans-serif;">Estrella Dulce S.A.</strong></p>
+                <p>Medellín, Antioquia</p>
+                <p><a href="#" class="footer-link">Términos y condiciones</a> | <a href="#" class="footer-link">Política de privacidad</a></p>
+                <p>&copy; 2026 Estrella Dulce. Todos los derechos reservados.</p>
+            </div>
+            <ul class="list-unstyled text-center text-md-start">
+                <li class="mb-2">
+                    <span class="customer-service-title">Atención al cliente</span><br />
+                    <p class="mb-0" style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Tel: +3146199121 | Email: proyectpostres@gmail.com</p>
+                </li>
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=573146199121&amp;text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web" class="btn-ed btn-ed--white mt-2" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+                </li>
+            </ul>
+            <img
+            src="../imagen/I.E F├®lix De Bedout Moreno Escudo.png"
+                alt="Logo Félix"
+                class="footer-logo"
+            alt="Logo Félix de Bedout Moreno"
+            class="footer-logo"
+            loading="lazy"
+        >
+
+        </div>
+    </footer>
+
+</body>
+</html>

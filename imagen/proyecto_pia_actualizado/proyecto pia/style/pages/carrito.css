@@ -1,0 +1,81 @@
+/* CSS exclusivo de carrito.html */
+
+body {
+      font-family: 'Kavoon', cursive;
+      margin: 0;
+      background: #f8f9fa;
+      }
+
+    .contenedor {
+      margin: 56px auto;
+      text-align: center;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .carrito {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+
+    .producto {
+      background-color: #d8ffd8;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #9dd79d;
+    }
+
+    .eliminar {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .eliminar:hover {
+      background: #d63031;
+      transform: scale(1.05);
+    }
+
+    .btn-finalizar {
+      background: linear-gradient(90deg, #07f33a, #00ff62);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .btn-finalizar:hover {
+      background: linear-gradient(90deg, #0092cc, #0bdaff);
+      transform: scale(1.05);
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #07f33a;
+      font-weight: bold;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
+    }

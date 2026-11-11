@@ -1,0 +1,405 @@
+/* =========================================================
+   ESTRELLA DULCE
+   postres.css
+   CSS EXCLUSIVO PARA postres.html
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.postres-page {
+    background-color: #fff7fa;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.postres-page .postres-title {
+    color: #f59a22;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTENEDOR DE TARJETAS
+   ========================================================= */
+
+#postresContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Cada columna ocupa toda la altura disponible */
+
+#postresContainer > div {
+    display: flex;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.postres-card {
+    width: 100%;
+    height: 100% !important;
+
+    display: flex;
+    flex-direction: column;
+
+    border: none !important;
+    border-radius: 15px !important;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Efecto de la tarjeta */
+
+.postres-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.16) !important;
+}
+
+
+/* =========================================================
+   IMÁGENES
+   TODAS EXACTAMENTE DEL MISMO TAMAÑO
+   ========================================================= */
+
+.postres-card .card-img-top {
+    width: 100% !important;
+
+    height: 230px !important;
+    min-height: 230px !important;
+    max-height: 230px !important;
+
+    display: block;
+
+    object-fit: cover !important;
+    object-position: center center;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    cursor: pointer;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Zoom de la imagen */
+
+.postres-card:hover .card-img-top {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CONTENIDO DE LA TARJETA
+   ========================================================= */
+
+.postres-card .card-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   TÍTULO DEL PRODUCTO
+   ========================================================= */
+
+.postres-card .card-title {
+    min-height: 52px;
+
+    margin-bottom: 10px;
+
+    color: #5a3825;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.postres-card .card-text {
+    min-height: 55px;
+
+    margin-bottom: 10px;
+
+    color: #6b5a50;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PRECIO
+   ========================================================= */
+
+.postres-card .precio {
+    margin-top: 5px;
+    margin-bottom: 18px;
+
+    color: #b27642;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTENEDOR DE BOTONES
+   ========================================================= */
+
+.postres-card .card-body > .d-flex {
+    width: 100%;
+
+    margin-top: auto;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   BOTONES
+   ANULAMOS EL AZUL DE BOOTSTRAP
+   ========================================================= */
+
+.postres-card .btn-primary {
+    width: 50% !important;
+
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f5db49 !important;
+
+    border: 2px solid #f5db49 !important;
+
+    border-radius: 8px !important;
+
+    color: #4a3428 !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow: none !important;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover botones */
+
+.postres-card .btn-primary:hover {
+    background-color: #ff7ca8 !important;
+
+    border-color: #ff7ca8 !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARRITO FLOTANTE
+   ========================================================= */
+
+.postres-page .boton-carrito {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background-color: #a3f1c6;
+
+    border: none;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.3);
+
+    z-index: 1050;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Hover carrito */
+
+.postres-page .boton-carrito:hover {
+    background-color: #b2fdcf;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   CONTADOR DEL CARRITO
+   ========================================================= */
+
+.postres-page .contador-carrito {
+    position: absolute;
+
+    top: 3px;
+    right: 3px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #dc3545;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .postres-card .card-img-top {
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #postresContainer > div {
+        display: flex;
+    }
+
+    .postres-card .card-img-top {
+        height: 230px !important;
+        min-height: 230px !important;
+        max-height: 230px !important;
+    }
+
+    .postres-card .card-title {
+        min-height: auto;
+    }
+
+    .postres-card .card-text {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .postres-card .card-img-top {
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
+    }
+
+    .postres-card .card-body {
+        padding: 18px;
+    }
+
+    .postres-card .card-title {
+        font-size: 18px;
+    }
+
+    .postres-card .card-text {
+        font-size: 14px;
+    }
+
+    .postres-card .btn-primary {
+        font-size: 14px;
+    }
+
+    .postres-page .boton-carrito {
+        right: 15px;
+        bottom: 15px;
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 25px;
+    }
+
+}

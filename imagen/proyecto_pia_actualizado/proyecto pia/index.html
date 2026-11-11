@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estrella Dulce - Postres Artesanales</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+<body>
+
+<header class="ed-header">
+  <a href="index.html" class="ed-header__brand">
+    <img src="imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+
+  <nav class="ed-nav">
+    <a href="vistas/postres.html">Postres</a>
+    <a href="vistas/nosotros.html">Nosotros</a>
+    <a href="vistas/contacto.html" id="open-contact">Contacto</a>
+
+    <a href="vistas/carrito.html" class="ed-cart" aria-label="Carrito de Compras">
+      🛒
+      <span id="cart-count" class="ed-cart-count bg-beige">0</span>
+    </a>
+
+    <a href="vistas/iniciar sesion.html" id="open-login" aria-label="Iniciar sesión">👤</a>
+  </nav>
+</header>
+
+  <!-- CARRUSEL -->
+  <div class="page-wrap" style="margin-top: 32px;">
+    <div id="postresCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./imagen/Postre de Caf├®.jpg" class="d-block w-100" alt="Postre de cafe" />
+        </div>
+        <div class="carousel-item">
+          <img src="./imagen/Postre de Milo.jpg" class="d-block w-100" alt="Postre de milo" />
+        </div>
+        <div class="carousel-item">
+          <img src="./imagen/Postre de Fresa Chocolate.png" class="d-block w-100" alt="Postre de fresa chocolate" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#postresCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#postresCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- TARJETAS INTERACTIVAS -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Nuestros Postres Destacados</h2>
+    <div class="row" id="cardsContainer">
+      <!-- JavaScript insertará tarjetas aquí -->
+    </div>
+  </section>
+
+  <!-- TARJETAS FIJAS -->
+  <div class="container my-5">
+    <div class="row text-center align-items-stretch">
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card card-postre shadow-sm border-0 h-100">
+          <a href="vistas/postremaracuya.html">
+            <img src="imagen/postre maracuya.jpg" class="card-img-top" alt="postre de maracuya">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Postre de maracuyá</h5>
+            <p class="card-text">¡Déjate conquistar por la frescura del trópico!
+            Cremoso, ligero y con el equilibrio perfecto entre dulzura y acidez. Refrescante, natural… ¡una cucharada y te enamoras! </p>
+            <a href="vistas/postremaracuya.html" class="btn-ed btn-ed--outline">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card card-postre shadow-sm border-0 h-100">
+          <a href="vistas/postremilo.html">
+            <img src="imagen/2af55558-db0a-4aa7-9872-975e66defa31.jpg" class="card-img-top" alt="Delicioso Postre de Milo">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Postre de Milo</h5>
+            <p class="card-text">¡El sabor de tu infancia en un postre irresistible!
+            Suave, cremoso y con el toque único de Milo: textura perfecta, explosión de chocolate y malta… ¡hecho con amor y mucho Milo! </p>
+            <a href="vistas/postremilo.html" class="btn-ed btn-ed--outline">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card card-postre shadow-sm border-0 h-100">
+          <a href="vistas/postrelimon.html">
+            <img src="imagen/ccad4bfe-511f-4510-89bc-703219aee74a.jpg" class="card-img-top" alt="Postre de Limón">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Postre de Limón</h5>
+            <p class="card-text">¡Refrescante y delicioso!
+            Suave, cremoso y con el toque ácido perfecto. Ligero, natural y clásico… ¡te conquistará a la primera cucharada! </p>
+            <a href="vistas/postrelimon.html" class="btn-ed btn-ed--outline">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bienvenido de nuevo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Elige cómo quieres continuar</p>
+          <button type="button" class="login-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" />
+            CONTINUAR CON GOOGLE
+          </button>
+          <button type="button" class="login-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" />
+            CONTINUAR CON INSTAGRAM
+          </button>
+          <input type="tel" placeholder="Número de verificación" />
+          <button type="button" class="login-btn continue-btn">CONTINUAR</button>
+          <p class="small-text mt-3">
+            ¿No tienes cuenta? <a href="#">Crear una cuenta</a><br />
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="./imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2026 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+
+      <ul class="list-unstyled text-center text-md-start">
+        <li class="mb-2">
+          <span style="font-size: 18px;"><strong>Atención al cliente</strong></span><br>
+          <p class="mb-0">Tel: +3146199121 | Email: proyectpostres@gmail.com</p>
+        </li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=573146199121&amp;text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web"
+             class="btn-ed btn-ed--gold mt-2" target="_blank" rel="noopener">
+            💬 Escríbenos por WhatsApp
+          </a>
+        </li>
+      </ul>
+
+      <img src="./imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+
+  <!-- Bootstrap + JS propio -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script/index.js"></script>
+</body>
+</html>

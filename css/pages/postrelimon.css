@@ -1,0 +1,141 @@
+/* CSS exclusivo de postrelimon.html */
+
+body {
+      font-family: 'Kavoon', cursive;
+      background: linear-gradient(180deg, #ffffff, #fffde8);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 60px;
+    }
+
+    /* 🍋 Imagen del postre */
+    .producto-img img {
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 5px solid transparent;
+      background: linear-gradient(45deg, #f4e04d, #fff176);
+      background-clip: padding-box;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .producto-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    .producto-info {
+      max-width: 420px;
+      text-align: left;
+    }
+
+    .producto-info h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #2d2d2d;
+    }
+
+    .precio {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #f5b700;
+    }
+
+    .descripcion {
+      font-size: 16px;
+      color: #3a3a00;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .selector label {
+      font-weight: bold;
+      color: #2d2d2d;
+    }
+
+    select, input[type="number"] {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 15px;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fffef5;
+    }
+
+    .boton {
+      display: inline-block;
+      background: #f5b700;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100%;
+      transition: 0.3s ease;
+    }
+
+    .boton:hover {
+      background: #e4a200;
+    }
+
+    /* 🛒 Botón flotante del carrito */
+    #btnCarrito {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #f4e04d;
+      color: #3a3a00;
+      border: none;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    #btnCarrito:hover {
+      background-color: #f5b700;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    #contadorCarrito {
+      position: absolute;
+      top: 5px;
+      right: 7px;
+      background-color: #ff3b3b;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 3px 8px;
+    }
+
+    /* 📱 Móvil */
+    @media (max-width: 768px) {
+      .producto-img img {
+        width: 100%;
+        height: auto;
+      }
+    }

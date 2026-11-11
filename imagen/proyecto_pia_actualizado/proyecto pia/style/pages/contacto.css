@@ -1,0 +1,97 @@
+/* CSS exclusivo de contacto.html */
+
+body {
+      font-family: 'Kavoon', cursive;
+      margin: 0;
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      }
+
+    .contenedor {
+      margin: 56px auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 700px;
+      width: 90%;
+      padding: 40px;
+      text-align: center;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  h1 {
+  color: #140209;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  animation: subirBajar 2.5s ease-in-out infinite;
+}
+
+@keyframes subirBajar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      color: #0e0206;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #b3ffca;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #aef186;
+      box-shadow: 0 0 8px #ffc0d9;
+    }
+
+    button {
+      background-color: #aee788;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d8367b;
+      transform: scale(1.05);
+    }
+
+    .ilustracion {
+      width: 180px;
+      margin-bottom: 20px;
+      animation: flotar 3s ease-in-out infinite;
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }

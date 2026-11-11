@@ -1,0 +1,17 @@
+/* CSS exclusivo de nosotros.html */
+
+p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-text-soft);
+    }
+
+    .btn-secondary {
+      font-family: var(--font-body);
+      font-weight: bold;
+    }

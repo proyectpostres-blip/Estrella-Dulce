@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Delicias Estelares</title>
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      margin: 0;
+      background: #f8f9fa;
+      }
+
+    .contenedor {
+      margin: 56px auto;
+      text-align: center;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .carrito {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      background: #f9f9f9;
+    }
+
+    .producto {
+      background-color: #d8ffd8;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #9dd79d;
+    }
+
+    .eliminar {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .eliminar:hover {
+      background: #d63031;
+      transform: scale(1.05);
+    }
+
+    .btn-finalizar {
+      background: linear-gradient(90deg, #07f33a, #00ff62);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .btn-finalizar:hover {
+      background: linear-gradient(90deg, #0092cc, #0bdaff);
+      transform: scale(1.05);
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #07f33a;
+      font-weight: bold;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="contenedor">
+    <h1>🛒 Tu Carrito de Postres</h1>
+
+    <div id="carrito" class="carrito">
+      <p>Cargando productos...</p>
+    </div>
+
+    <button class="btn-finalizar" onclick="irAPago()">Finalizar Compra</button>
+    <br>
+    <a href="postres.html" class="volver">← Seguir comprando</a>
+  </div>
+
+  <script>
+    let carrito = [];
+
+    // 🔹 Leer los productos guardados en localStorage
+    function cargarCarrito() {
+      carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      mostrarCarrito();
+    }
+
+    // 🔹 Mostrar los productos
+    function mostrarCarrito() {
+      const carritoDiv = document.getElementById("carrito");
+
+      if (carrito.length === 0) {
+        carritoDiv.innerHTML = "<p>Tu carrito está vacío 🍰</p>";
+        return;
+      }
+
+      let html = "";
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        total += item.precio;
+        html += `
+          <div class="producto">
+            <span>${item.nombre}</span>
+            <span>$${item.precio.toLocaleString('es-CO')}</span>
+            <button class="eliminar" onclick="eliminarArticulo(${index})">X</button>
+          </div>
+        `;
+      });
+
+      html += `<p><strong>Total: $${total.toLocaleString('es-CO')}</strong></p>`;
+      carritoDiv.innerHTML = html;
+    }
+
+    // 🔹 Eliminar un artículo
+    function eliminarArticulo(index) {
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarCarrito();
+    }
+
+    // 🔹 Ir a la página de pago
+    function irAPago() {
+      if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+      window.location.href = "envio.html";
+    }
+
+    // 🔹 Cargar el carrito al iniciar la página
+    cargarCarrito();
+  </script>
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

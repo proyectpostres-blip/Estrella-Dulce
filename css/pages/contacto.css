@@ -1,0 +1,535 @@
+/* =========================================================
+   ESTRELLA DULCE
+   contacto.css
+
+   CSS EXCLUSIVO PARA contacto.html
+
+   IMPORTANTE:
+   - NO modificar .ed-header
+   - NO modificar .ed-nav
+   - NO modificar .ed-header__logo
+   - NO modificar .ed-footer
+   - NO modificar .footer-logo
+   - NO modificar .footer-link
+
+   El HEADER y FOOTER se controlan desde style.css
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA DE CONTACTO
+   ========================================================= */
+
+.contacto-page {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f0f0f0
+    );
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.contacto-main {
+    width: 100%;
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================================
+   TARJETA DE CONTACTO
+   ========================================================= */
+
+.contacto-contenedor {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background-color: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.20);
+
+    text-align: center;
+
+    animation: contactoAparecer 1s ease-in-out;
+}
+
+
+/* =========================================================
+   ANIMACIÓN DE APARICIÓN
+   ========================================================= */
+
+@keyframes contactoAparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.contacto-title {
+    margin: 0 0 20px 0;
+
+    color: #140209;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    animation: contactoSubirBajar 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIÓN DEL TÍTULO
+   ========================================================= */
+
+@keyframes contactoSubirBajar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.contacto-descripcion {
+    margin: 0 0 30px 0;
+
+    color: #333333;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1.2rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.contacto-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   GRUPO DE CAMPO
+   ========================================================= */
+
+.contacto-campo {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   ETIQUETAS
+   ========================================================= */
+
+.contacto-campo label {
+    color: #0e0206;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUTS Y TEXTAREA
+   ========================================================= */
+
+.contacto-campo input,
+.contacto-campo textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border: 2px solid #b3ffca;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    color: #333333;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.contacto-campo input::placeholder,
+.contacto-campo textarea::placeholder {
+    color: #888888;
+}
+
+
+/* =========================================================
+   INPUT AL RECIBIR FOCO
+   ========================================================= */
+
+.contacto-campo input:focus,
+.contacto-campo textarea:focus {
+
+    border-color: #aef186;
+
+    background-color: #fffdfd;
+
+    box-shadow:
+        0 0 8px rgba(255, 192, 217, 0.8);
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.contacto-campo textarea {
+
+    min-height: 130px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTÓN ENVIAR
+   ========================================================= */
+
+.contacto-btn {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 5px;
+
+    padding: 12px 20px;
+
+    background-color: #aee788;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER BOTÓN
+   ========================================================= */
+
+.contacto-btn:hover {
+
+    background-color: #d8367b;
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 5px 15px rgba(216, 54, 123, 0.25);
+}
+
+
+/* =========================================================
+   BOTÓN AL HACER CLICK
+   ========================================================= */
+
+.contacto-btn:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ILUSTRACIÓN
+   ========================================================= */
+
+.contacto-ilustracion {
+
+    display: block;
+
+    width: 180px;
+    max-width: 100%;
+
+    margin: 0 auto 20px auto;
+
+    animation: contactoFlotar 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIÓN ILUSTRACIÓN
+   ========================================================= */
+
+@keyframes contactoFlotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .contacto-main {
+        padding: 50px 20px;
+    }
+
+    .contacto-contenedor {
+        max-width: 650px;
+
+        padding: 35px;
+    }
+
+    .contacto-title {
+        font-size: 2.3rem;
+    }
+
+    .contacto-descripcion {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .contacto-main {
+
+        min-height: auto;
+
+        padding: 40px 15px;
+    }
+
+    .contacto-contenedor {
+
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+    .contacto-title {
+
+        font-size: 2rem;
+
+        margin-bottom: 18px;
+    }
+
+    .contacto-descripcion {
+
+        font-size: 1rem;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+    }
+
+    .contacto-form {
+
+        gap: 16px;
+    }
+
+    .contacto-campo label {
+
+        font-size: 15px;
+    }
+
+    .contacto-campo input,
+    .contacto-campo textarea {
+
+        padding: 11px;
+
+        font-size: 16px;
+    }
+
+    .contacto-campo textarea {
+
+        min-height: 120px;
+    }
+
+    .contacto-btn {
+
+        min-height: 46px;
+
+        font-size: 15px;
+    }
+
+    .contacto-ilustracion {
+
+        width: 150px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .contacto-main {
+
+        padding: 30px 12px;
+    }
+
+    .contacto-contenedor {
+
+        padding: 25px 18px;
+
+        border-radius: 14px;
+    }
+
+    .contacto-title {
+
+        font-size: 1.8rem;
+    }
+
+    .contacto-descripcion {
+
+        font-size: 0.95rem;
+
+        margin-bottom: 23px;
+    }
+
+    .contacto-form {
+
+        gap: 15px;
+    }
+
+    .contacto-campo label {
+
+        font-size: 14px;
+    }
+
+    .contacto-campo input,
+    .contacto-campo textarea {
+
+        padding: 10px;
+
+        font-size: 16px;
+    }
+
+    .contacto-campo textarea {
+
+        min-height: 110px;
+    }
+
+    .contacto-btn {
+
+        min-height: 45px;
+
+        padding: 10px;
+
+        font-size: 14px;
+    }
+
+    .contacto-ilustracion {
+
+        width: 130px;
+
+        margin-bottom: 15px;
+    }
+
+}

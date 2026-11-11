@@ -1,0 +1,83 @@
+/* CSS exclusivo de postres.html */
+
+body {
+      background-color: #fff7fa;
+      font-family: 'Kavoon', cursive;
+    }
+
+    h1 {
+      font-weight: 700;
+      color: #f59a22;
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-img-top:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: #f5db49e0;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff7ca8;
+    }
+
+    /* --- Botón flotante del carrito --- */
+    .boton-carrito {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #a3f1c6;
+      border: none;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      font-size: 30px;
+    }
+
+    .boton-carrito:hover {
+      background-color: #b2fdcf;
+      transform: scale(1.1);
+    }
+
+    /* --- Contador del carrito --- */
+    .contador-carrito {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      color: white;
+      font-size: 14px;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }

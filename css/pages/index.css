@@ -1,0 +1,395 @@
+/* =========================================================
+   ESTRELLA DULCE
+   style.css
+   ESTILOS COMPARTIDOS ENTRE INDEX Y ADMIN
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+    --color-crema: #fffaf5;
+    --color-beige: #f3dfc1;
+    --color-dorado: #db1a35;
+    --color-dorado-hover: #b8142a;
+    --color-marron: #4a3022;
+    --color-texto: #333333;
+    --color-texto-suave: #666666;
+    --color-blanco: #ffffff;
+    --color-borde: #e2d5c8;
+}
+
+
+/* =========================================================
+   2. CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--color-crema);
+    color: var(--color-texto);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   3. CONTENEDOR GENERAL
+   ========================================================= */
+
+.page-wrap {
+    width: 90%;
+    max-width: 1400px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+.ed-header {
+    width: 100%;
+    min-height: 85px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--color-beige);
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* Marca */
+
+.ed-header__brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--color-marron);
+}
+
+.ed-header__brand:hover {
+    color: var(--color-dorado);
+}
+
+.ed-header__logo {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.ed-header__title {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   5. NAVEGACIÓN
+   ========================================================= */
+
+.ed-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.ed-nav > a {
+    color: var(--color-marron);
+
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+.ed-nav > a:hover {
+    color: var(--color-dorado);
+}
+
+
+/* =========================================================
+   6. CARRITO
+   ========================================================= */
+
+.ed-cart {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.ed-cart-count {
+    position: absolute;
+
+    top: -12px;
+    right: -15px;
+
+    min-width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 5px;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    background-color: var(--color-dorado);
+    color: var(--color-blanco);
+}
+
+.bg-beige {
+    background-color: var(--color-beige) !important;
+}
+
+
+/* =========================================================
+   7. BOTONES ESTRELLA DULCE (CON FORZADO !IMPORTANT)
+   ========================================================= */
+
+.btn-ed {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn-ed:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Botón outline */
+
+.btn-ed--outline {
+    border: 2px solid #db1a35 !important;
+
+    color: #db1a35 !important;
+
+    background-color: transparent !important;
+}
+
+.btn-ed--outline:hover {
+    background-color: #db1a35 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Botón sólido */
+
+.btn-ed--gold {
+    background-color: #db1a35 !important;
+
+    border: 2px solid #db1a35 !important;
+
+    color: #ffffff !important;
+}
+
+.btn-ed--gold:hover {
+    background-color: #b8142a !important;
+
+    border-color: #b8142a !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   8. MODALES
+   ========================================================= */
+
+.modal-content {
+    border: none;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: var(--color-beige);
+
+    color: var(--color-marron);
+}
+
+.modal-title {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   9. FOOTER (PIE DE PÁGINA CON FORZADO !IMPORTANT)
+   ========================================================= */
+
+.ed-footer,
+footer {
+    margin-top: 60px;
+
+    padding: 35px 0;
+
+    background-color: #db1a35 !important;
+
+    color: #ffffff !important;
+}
+
+.ed-footer-info p {
+    margin-bottom: 8px;
+}
+
+.footer-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+.footer-link {
+    color: var(--color-beige) !important;
+
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff !important;
+}
+
+.customer-service-title {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .ed-header {
+        padding: 12px 3%;
+    }
+
+    .ed-nav {
+        gap: 15px;
+    }
+
+    .ed-header__title {
+        font-size: 23px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .ed-header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+    .ed-header__brand {
+        justify-content: center;
+    }
+
+    .ed-header__title {
+        font-size: 24px;
+    }
+
+    .ed-nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .ed-footer {
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .ed-header__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ed-header__title {
+        font-size: 20px;
+    }
+
+    .ed-nav {
+        gap: 10px;
+
+        font-size: 14px;
+    }
+}
+
+/* Estilos exclusivos de la página de inicio */

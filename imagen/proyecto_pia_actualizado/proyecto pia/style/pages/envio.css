@@ -1,0 +1,74 @@
+/* CSS exclusivo de envio.html */
+
+body {
+      background: #f7f8fa;
+      font-family: 'Kavoon', cursive;
+      }
+
+    .pago-container {
+      margin: 56px auto;
+      background: #ffe2e2;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 420px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #000000;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 500;
+      color: #130202;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #363333;
+      border-radius: 10px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #f1137b;
+      box-shadow: 0 0 5px rgba(247, 9, 187, 0.3);
+    }
+
+    button {
+      background: linear-gradient(90deg, #f32256, #ff194b);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #15f572, #1ae64d);
+      transform: scale(1.03);
+    }
+
+    #resumen {
+      text-align: left;
+      margin-bottom: 15px;
+      background: #f9fafc;
+      padding: 10px;
+      border-radius: 10px;
+    }

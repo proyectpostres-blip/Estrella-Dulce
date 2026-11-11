@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postre de Café - Estrella Dulce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      background: #f5f3ef;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 50px;
+    }
+
+    /* --- Imagen del producto --- */
+    .producto-img img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      border: 4px solid #d8c2a0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .producto-img img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(160, 107, 60, 0.3);
+      height: 100%;
+    }
+
+    /* --- Información --- */
+    .producto-info {
+      max-width: 520px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .producto-info h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #4b2e05;
+      text-transform: capitalize;
+    }
+
+    .descripcion {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .precio {
+      color: #9b5e24;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .selector label {
+      font-weight: bold;
+      color: #4b2e05;
+    }
+
+    select, input[type="number"] {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 2px solid #c8b694;
+      width: 100%;
+      background-color: #fffaf2;
+    }
+
+    /* --- Botón principal --- */
+    .boton {
+      display: inline-block;
+      background: #9b5e24;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100%;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(155, 94, 36, 0.3);
+    }
+
+    .boton:hover {
+      background: #b26b2d;
+      transform: scale(1.03);
+    }
+
+    /* --- Botón flotante del carrito --- */
+    #btnCarrito {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #d8c2a0;
+      color: #4b2e05;
+      border: none;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    #btnCarrito:hover {
+      background-color: #b26b2d;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    #contadorCarrito {
+      position: absolute;
+      top: 5px;
+      right: 7px;
+      background-color: #ff3b3b;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 3px 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .producto-info {
+        max-width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <!-- Imagen -->
+    <div class="producto-img">
+      <img src="../imagen/Postre de Caf├®.jpg" alt="Postre de café">
+    </div>
+
+    <!-- Información -->
+    <div class="producto-info">
+      <h1>Postre de café</h1>
+      <p class="descripcion">
+        Cremoso, aromático y con el toque justo de café natural. Hecho con amor y pensado para disfrutar cada cucharada,
+        este postre combina el sabor auténtico del café con una textura suave y dulce que te hará sentir como en casa.
+      </p>
+
+      <p class="precio" id="precioTexto">$5.000</p>
+
+      <div class="selector">
+        <label for="tamano">Tamaño:</label>
+        <select id="tamano" onchange="actualizarPrecio()">
+          <option value="junior">Junior</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <div class="selector">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+      </div>
+
+      <button class="boton" onclick="agregarCarrito()">🛒 Añadir al carrito</button>
+    </div>
+  </div>
+
+  <!-- 🔹 Botón flotante del carrito -->
+  <button id="btnCarrito" onclick="irAlCarrito()">
+    🛒
+    <span id="contadorCarrito">0</span>
+  </button>
+
+  <script>
+    // 🔹 Precios según tamaño
+    const precios = {
+      junior: 5000,
+      mediano: 8000,
+      grande: 10000
+    };
+
+    // 🔹 Actualiza el precio al cambiar tamaño
+    function actualizarPrecio() {
+      const tamano = document.getElementById("tamano").value;
+      const precio = precios[tamano];
+      document.getElementById("precioTexto").textContent = `$${precio.toLocaleString()}`;
+    }
+
+    // 🔹 Cargar carrito
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // 🔹 Agregar al carrito
+    function agregarCarrito() {
+      const tamano = document.getElementById("tamano").value;
+      const cantidad = parseInt(document.getElementById("cantidad").value);
+      const precio = precios[tamano];
+
+      const producto = {
+        nombre: "Postre de Café",
+        tamano: tamano,
+        precio: precio,
+        cantidad: cantidad,
+        imagen: "../imagen/Postre de Café.jpg"
+      };
+
+      carrito.push(producto);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
+      actualizarContadorCarrito();
+      alert(`Agregaste ${cantidad}x ${producto.nombre} (${tamano}) - $${precio.toLocaleString()} cada uno ☕`);
+    }
+
+    // 🔹 Actualizar contador
+    function actualizarContadorCarrito() {
+      const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+      document.getElementById("contadorCarrito").textContent = total;
+    }
+
+    // 🔹 Ir al carrito
+    function irAlCarrito() {
+      window.location.href = "carrito.html";
+    }
+
+    // Inicializar contador
+    actualizarContadorCarrito();
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>

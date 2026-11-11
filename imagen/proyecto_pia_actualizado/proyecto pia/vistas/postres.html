@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestros Postres - Estrella Dulce</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff7fa;
+      font-family: 'Kavoon', cursive;
+    }
+
+    h1 {
+      font-weight: 700;
+      color: #f59a22;
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-img-top:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-primary {
+      background-color: #f5db49e0;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff7ca8;
+    }
+
+    /* --- Botón flotante del carrito --- */
+    .boton-carrito {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #a3f1c6;
+      border: none;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      font-size: 30px;
+    }
+
+    .boton-carrito:hover {
+      background-color: #b2fdcf;
+      transform: scale(1.1);
+    }
+
+    /* --- Contador del carrito --- */
+    .contador-carrito {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      color: white;
+      font-size: 14px;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <main class="container my-5">
+    <h1 class="text-center mb-5">🍰 Explorar Todos Nuestros Postres 🍨</h1>
+    
+    <div class="row" id="postresContainer">
+      <!-- JS insertará las tarjetas aquí -->
+    </div>
+  </main>
+
+  <!-- 🛒 Botón flotante -->
+  <button class="boton-carrito" onclick="abrirCarrito()">
+    🛒
+    <span id="contador" class="contador-carrito">0</span>
+  </button>
+
+  <script>
+    // Lista de postres con precios
+    const postres = [
+      { titulo: "Postre de Café", descripcion: "Un clásico intenso y cremoso.", imagen: "../imagen/Postre de Caf├®.jpg", precio: 5000, enlace: "postrecafe.html" },
+      { titulo: "Postre de Maracuyá", descripcion: "Refrescante y tropical, con un toque ácido perfecto.", imagen: "../imagen/postre maracuya.jpg", precio: 7000, enlace: "postremaracuya.html" },
+      { titulo: "Postre de Milo", descripcion: "Dulce, suave y con el sabor único del Milo.", imagen: "../imagen/Postre de Milo.jpg", precio: 7000, enlace: "postremilo.html" },
+      { titulo: "Postre de Limón", descripcion: "Ligero y cremoso, ideal para refrescar el día.", imagen: "../imagen/ccad4bfe-511f-4510-89bc-703219aee74a.jpg", precio: 7000, enlace: "postrelimon.html" },
+      { titulo: "Postre de Oreo", descripcion: "Suave, dulce y con el toque perfecto de galleta Oreo.", imagen: "../imagen/postre de oreo.jpg", precio: 5000, enlace: "postreoreo.html" },
+      { titulo: "Postre de Fresa", descripcion: "Ligero y cremoso, ideal para refrescar el día.", imagen: "../imagen/postre de fresa.jpg", precio: 7000, enlace: "postredefresa.html" },
+      { titulo: "Cheesecake con Fresa", descripcion: "Cremoso, suave y coronado con fresas frescas.", imagen: "../imagen/cheesecake.jpg", precio: 7000, enlace: "cheesecakepostre.html" },
+      { titulo: "Postre de 3 Leches", descripcion: "Esponjoso y dulce, un clásico irresistible.", imagen: "../imagen/postre 3 leches.jpg", precio: 7000, enlace: "postre3leches.html" },
+    ];
+
+    const container = document.getElementById("postresContainer");
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Generar tarjetas dinámicamente
+    postres.forEach(postre => {
+      const col = document.createElement("div");
+      col.className = "col-12 col-md-6 col-lg-4 mb-4";
+
+      col.innerHTML = `
+        <div class="card shadow-sm h-100">
+          <img src="${postre.imagen}" class="card-img-top" alt="${postre.titulo}" onclick="location.href='${postre.enlace}'">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">${postre.titulo}</h5>
+              <p class="card-text">${postre.descripcion}</p>
+              <p><strong>$${postre.precio.toLocaleString('es-CO')}</strong></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <a href="${postre.enlace}" class="btn btn-primary w-50 me-1">Ver</a>
+              <button class="btn btn-primary w-50 ms-1" onclick="agregarCarrito('${postre.titulo}', ${postre.precio})">Agregar</button>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+
+    // 🧩 Función para agregar productos al carrito
+    function agregarCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarContador();
+      alert(`${nombre} agregado al carrito 🛒`);
+    }
+
+    // 🧮 Actualiza el contador flotante
+    function actualizarContador() {
+      document.getElementById("contador").textContent = carrito.length;
+    }
+
+    // 🔗 Redirige al carrito
+    function abrirCarrito() {
+      window.location.href = "carrito.html";
+    }
+
+    // Mostrar contador al cargar
+    actualizarContador();
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2026 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>
+

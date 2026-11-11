@@ -1,0 +1,417 @@
+/* =========================================================
+   ESTRELLA DULCE
+   nosotros.css
+
+   CSS EXCLUSIVO PARA nosotros.html
+   ========================================================= */
+
+
+/* =========================================================
+   1. PÁGINA
+   ========================================================= */
+
+.nosotros-page {
+    background-color: #fff7fa;
+}
+
+
+/* =========================================================
+   2. CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.nosotros-page main {
+    width: 100%;
+    min-height: 500px;
+}
+
+
+/* =========================================================
+   3. TÍTULO PRINCIPAL
+   ========================================================= */
+
+.nosotros-title {
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    color: #f59a22;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   4. INTRODUCCIÓN
+   ========================================================= */
+
+.nosotros-intro {
+    margin: 0 auto;
+
+    color: #5a3825 !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1.2rem !important;
+
+    font-weight: 600;
+
+    line-height: 1.7 !important;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   5. TEXTO GENERAL
+   ========================================================= */
+
+.nosotros-page p {
+    margin-bottom: 18px;
+
+    color: #6b5a50;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   6. SEPARADOR
+   ========================================================= */
+
+.nosotros-separador {
+    width: 100%;
+
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    border: 0;
+
+    border-top: 2px solid #e2d5c8;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   7. BLOQUES DE PERSONAS
+   ========================================================= */
+
+.nosotros-persona {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2d5c8;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   8. HOVER DE LOS BLOQUES
+   ========================================================= */
+
+.nosotros-persona:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   9. TÍTULOS DE LAS PERSONAS
+   ========================================================= */
+
+.nosotros-persona h3 {
+    margin: 0 0 15px 0;
+
+    color: #5a3825;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   10. TEXTO DE LAS PERSONAS
+   ========================================================= */
+
+.nosotros-persona p {
+    margin: 0;
+
+    color: #6b5a50;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. BOTÓN VOLVER AL INICIO
+   ========================================================= */
+
+.nosotros-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+
+    min-height: 45px;
+
+    padding: 10px 22px;
+
+    background-color: #f5db49;
+
+    border: 2px solid #f5db49;
+
+    border-radius: 8px;
+
+    color: #4a3428 !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   12. HOVER BOTÓN
+   ========================================================= */
+
+.nosotros-btn:hover {
+    background-color: #ff7ca8;
+
+    border-color: #ff7ca8;
+
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   13. FOCUS BOTÓN
+   ========================================================= */
+
+.nosotros-btn:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(245, 219, 73, 0.35);
+}
+
+
+/* =========================================================
+   14. AJUSTE DEL FOOTER
+   ========================================================= */
+
+/*
+   Estas reglas solamente afectan al footer cuando estamos
+   en nosotros.html.
+*/
+
+.nosotros-page .ed-footer {
+    margin-top: 60px;
+}
+
+
+/* =========================================================
+   15. LOGOS DEL FOOTER
+   ========================================================= */
+
+.nosotros-page .footer-logo {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   16. ENLACES DEL FOOTER
+   ========================================================= */
+
+.nosotros-page .footer-link {
+    color: #f3dfc1;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.nosotros-page .footer-link:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   17. TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .nosotros-title {
+        font-size: 36px;
+    }
+
+    .nosotros-intro {
+        font-size: 1.15rem !important;
+    }
+
+    .nosotros-persona {
+        padding: 22px;
+    }
+
+    .nosotros-persona h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   18. CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .nosotros-page main {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .nosotros-title {
+        margin-top: 10px;
+
+        margin-bottom: 25px;
+
+        font-size: 32px;
+    }
+
+    .nosotros-intro {
+        font-size: 1.05rem !important;
+
+        line-height: 1.6 !important;
+    }
+
+    .nosotros-page p {
+        font-size: 1rem;
+
+        line-height: 1.6;
+    }
+
+    .nosotros-persona {
+        margin-bottom: 20px;
+
+        padding: 20px;
+    }
+
+    .nosotros-persona h3 {
+        font-size: 20px;
+
+        line-height: 1.4;
+    }
+
+    .nosotros-persona p {
+        font-size: 1rem;
+    }
+
+    .nosotros-separador {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .nosotros-btn {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+}
+
+
+/* =========================================================
+   19. CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .nosotros-title {
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+    .nosotros-intro {
+        font-size: 1rem !important;
+    }
+
+    .nosotros-persona {
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .nosotros-persona h3 {
+        font-size: 18px;
+    }
+
+    .nosotros-persona p {
+        font-size: 0.95rem;
+    }
+
+    .nosotros-btn {
+        min-height: 42px;
+
+        font-size: 15px;
+    }
+
+    .nosotros-page .footer-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+}

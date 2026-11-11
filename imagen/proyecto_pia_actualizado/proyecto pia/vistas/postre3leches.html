@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postre de 3 Leches - Estrella Dulce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kavoon', cursive;
+      background: #fff8fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px;
+      gap: 60px;
+    }
+
+    .producto-img img {
+      width: 460px;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid #ffdbe8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .producto-img img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(231, 84, 128, 0.35);
+    }
+
+    .producto-info {
+      max-width: 420px;
+      background: #ffffff;
+      padding: 30px 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .producto-info h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #e85a8a;
+      text-transform: capitalize;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .descripcion {
+      font-size: 16px;
+      color: #2b0a0a;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .precio {
+      color: #e85a8a;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .selector {
+      margin-bottom: 20px;
+    }
+
+    .selector label {
+      font-weight: bold;
+      color: #300707;
+    }
+
+    select, input[type="number"] {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 2px solid #f4b8c8;
+      width: 100%;
+      background: #fff9fb;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: #e85a8a;
+      box-shadow: 0 0 8px rgba(232,90,138,0.3);
+    }
+
+    .boton {
+      display: inline-block;
+      background: linear-gradient(90deg, #e75480, #ff94b4);
+      color: #fff;
+      font-weight: bold;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-transform: uppercase;
+      width: 100%;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 14px rgba(231, 84, 128, 0.3);
+    }
+
+    .boton:hover {
+      background: linear-gradient(90deg, #ff7fa2, #ffb6c8);
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(231, 84, 128, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .producto-info {
+        max-width: 95%;
+      }
+
+      .producto-img img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<header class="ed-header">
+  <a href="../index.html" class="ed-header__brand">
+    <img src="../imagen/ChatGPT Image 5 nov 2025, 10_50_14 p.m..png" alt="Logo Estrella Dulce" class="ed-header__logo">
+    <h1 class="ed-header__title">Estrella Dulce</h1>
+  </a>
+  <nav class="ed-nav">
+    <a href="postres.html">Postres</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html" class="ed-cart" aria-label="Carrito de Compras">🛒</a>
+    <a href="../index.html" aria-label="Inicio">🏠 Inicio</a>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <div class="producto-img">
+      <img src="../imagen/postre 3 leches.jpg" alt="Postre de 3 Leches">
+    </div>
+
+    <div class="producto-info">
+      <h1>Postre de 3 Leches</h1>
+      <p class="descripcion">
+        Esponjoso, dulce y bañado en una mezcla perfecta de tres tipos de leche. 
+        Hecho con cariño y una textura suave que se deshace en la boca, este clásico postre 
+        conquista con su sabor cremoso y su toque casero inigualable.
+      </p>
+
+      <p class="precio" id="precio">$7.000</p>
+
+      <div class="selector">
+        <label for="tamano">Tamaño:</label>
+        <select id="tamano" onchange="actualizarPrecio()">
+          <option value="junior">Junior</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+      </div>
+
+      <div class="selector">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+      </div>
+
+      <button class="boton" onclick="agregarCarrito()">🛒 Añadir al carrito</button>
+    </div>
+  </div>
+
+  <script>
+    const precios = {
+      junior: 7000,
+      mediano: 10000,
+      grande: 13000
+    };
+
+    function actualizarPrecio() {
+      const tamano = document.getElementById("tamano").value;
+      const precio = precios[tamano];
+      document.getElementById("precio").textContent = "$" + precio.toLocaleString();
+    }
+
+    function agregarCarrito() {
+      const cantidad = document.getElementById("cantidad").value;
+      const tamano = document.getElementById("tamano").value;
+      const precio = precios[tamano] * cantidad;
+      alert(`Agregaste ${cantidad} postre(s) tamaño ${tamano} al carrito 🛒\nTotal: $${precio.toLocaleString()}`);
+    }
+  </script>
+
+<footer class="ed-footer">
+    <div class="page-wrap d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <img src="../imagen/I.U Pascual Bravo Escudo.png" alt="Logo Pascual" class="footer-logo" />
+      <div class="text-center ed-footer-info my-3 my-md-0">
+        <p><strong>Estrella Dulce S.A.</strong></p>
+        <p>Medellín, Antioquia</p>
+        <p>
+          <a href="#" class="footer-link">Términos y condiciones</a> |
+          <a href="#" class="footer-link">Política de privacidad</a>
+        </p>
+        <p>&copy; 2025 Estrella Dulce. Todos los derechos reservados.</p>
+      </div>
+      <p class="text-center text-md-end mb-0">Tel: +3146199121<br>proyectpostres@gmail.com</p>
+      <img src="../imagen/I.E Félix De Bedout Moreno Escudo.png" alt="Logo Félix" class="footer-logo" />
+    </div>
+  </footer>
+</body>
+</html>
